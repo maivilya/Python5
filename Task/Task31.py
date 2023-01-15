@@ -16,5 +16,4 @@ while count < len(text_list):
             text_list.remove(word)
     count+=1
 
-print(text_list)
-# p@p@r@168
+print("result -> ",text_list)
