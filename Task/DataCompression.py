@@ -13,7 +13,23 @@ def data_compression(data):
     return compress_result
 
 
-data = "555888888811111111AAAAAAAHHHHHHIIIIIIII"
-print("Compressed data: ", data_compression(data), end="\n")
+def data_recovery(compressed_data):
+    recovery_result = ""
+    i = 0
+    while i < len(compressed_data):
+        while i + 1 < len(compressed_data) and compressed_data[i] == compressed_data[i + 1]:
+            recovery_result += compressed_data[i]
+            i += 1
+
+        i += 1
+
+    return recovery_result
+
+
+# data = "555888888811111111AAAAAAAHHHHHHIIIIIIII"
+# print("Compressed data: ", data_compression(data), end="\n")
 user_input = input("Enter some data: ")
 print("Compressed data: ", data_compression(user_input))
+print("Recovery data: ", data_recovery(user_input))
+
+# WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW
